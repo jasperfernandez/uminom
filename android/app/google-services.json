@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "767909201554",
+    "project_id": "jasperfernandez-firebase",
+    "storage_bucket": "jasperfernandez-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767909201554:android:f54ca44abdc7490b2ec84b",
+        "android_client_info": {
+          "package_name": "com.jasperfernandez.uminom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767909201554-ud4pj41b43jd2aahvlm0qi5ndrapf9le.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jasperfernandez.uminom",
+            "certificate_hash": "83cf3b7a4fad9f7f89c4159e59609350f84b4bb2"
+          }
+        },
+        {
+          "client_id": "767909201554-jqpqf00pulkitq3ne6mi23dfkg8tp4nd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi1vZgxMlsJQKGrtFvqJXdCFes00aWZ5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767909201554-jqpqf00pulkitq3ne6mi23dfkg8tp4nd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "767909201554-3umr3353k0nm15rulvcos2a0ccdbeedb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jasperfernandez.uminom.uminom"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
