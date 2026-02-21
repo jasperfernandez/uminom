@@ -60,7 +60,8 @@ lib/
 │   │   │
 │   │   ├── domain/
 │   │   │   ├── entities/
-│   │   │   └── repositories/
+│   │   │   ├── repositories/
+│   │   │   └── usecases/
 │   │   │
 │   │   └── presentation/
 │   │       ├── providers/
