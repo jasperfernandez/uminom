@@ -87,4 +87,5 @@ class DefaultFirebaseOptions {
     authDomain: 'jasperfernandez-firebase.firebaseapp.com',
     storageBucket: 'jasperfernandez-firebase.appspot.com',
   );
+
 }
