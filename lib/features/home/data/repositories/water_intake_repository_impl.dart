@@ -19,6 +19,11 @@ class WaterIntakeRepositoryImpl implements WaterIntakeRepository {
   }
 
   @override
+  Future<void> deleteEntry(String uid, String entryId) {
+    return remote.deleteEntry(uid, entryId);
+  }
+
+  @override
   Stream<List<WaterIntakeEntry>> watchDailyEntries(String uid, DateTime date) {
     return remote
         .watchDailyEntries(uid, date)

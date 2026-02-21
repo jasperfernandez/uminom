@@ -14,6 +14,10 @@ class WaterIntakeRemoteDataSource {
     await _collection(uid).add(entry.toFirestore());
   }
 
+  Future<void> deleteEntry(String uid, String entryId) async {
+    await _collection(uid).doc(entryId).delete();
+  }
+
   Stream<List<WaterIntakeEntryModel>> watchDailyEntries(
     String uid,
     DateTime date,
