@@ -1,6 +1,6 @@
-App Name: Uminom
+# Uminom
 
-Core Features:
+## Core Features
 
 Water Intake Logging: Log each water intake with a timestamp and volume.
 Daily Goal Setting: Set a personalized daily water intake goal.
@@ -8,23 +8,69 @@ Visual Hydration Meter: Display a clear, visual representation of daily progress
 Reminder Scheduling: Schedule reminders throughout the day to drink water.
 Generative Recommendation: AI-powered personalized advice using tool for optimal hydration based on logged activity and current conditions.
 
-Style Guidelines:
+## Style Guidelines
 
 Primary color: Sky blue (#46A5EA) to represent water and cleanliness.
 Background color: Very light blue (#E5F4FC) to provide a clean and calming backdrop.
 Accent color: Turquoise (#30D5C8) for interactive elements and highlights.
 
-Typhography:
+## Typography
+
 Body and headline font: 'PT Sans', a modern humanist sans-serif that is very readable.
 
-Iconography
+## Iconography
+
 Use water-themed icons (e.g., droplet, glass, bottle) for clarity.
 
-Layout:
+## Layout
+
 Clean, minimalist layout with clear visual hierarchy.
 
-Animation:
+## Animation
+
 Subtle animations on logging intake and reaching goals.
 
-Architecture to follow
-Riverpod MVVM. I already have a folder structure setup
+## Architecture and Stack
+
+Feature First, Flutter, Riverpod, MVVM.
+
+## Folder Structure
+
+```code
+lib/
+│
+├── core/
+│   ├── constants/
+│   ├── errors/
+│   ├── services/
+│   ├── utils/
+│   └── theme/
+│
+├── shared/
+│   ├── widgets/
+│   ├── providers/
+│   └── extensions/
+│
+├── features/
+│   ├── auth/
+│   │   ├── data/
+│   │   │   ├── models/
+│   │   │   ├── datasources/
+│   │   │   └── repositories/
+│   │   │
+│   │   ├── domain/
+│   │   │   ├── entities/
+│   │   │   └── repositories/
+│   │   │
+│   │   └── presentation/
+│   │       ├── providers/
+│   │       ├── controllers/
+│   │       ├── screens/
+│   │       └── widgets/
+│   │
+│   ├── dashboard/
+│   ├── profile/
+│   └── settings/
+│
+└── main.dart
+```

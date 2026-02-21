@@ -1,4 +1,4 @@
-# uminom
+# Uminom
 
 A new Flutter project.
 

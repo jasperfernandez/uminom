@@ -1,46 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/social_login_button.dart';
-import '../../../../core/providers/auth_provider.dart';
+import 'package:uminom/features/auth/presentation/controllers/auth_controller.dart';
+import 'package:uminom/features/auth/presentation/widgets/social_login_button.dart';
 
-class SignInPage extends ConsumerStatefulWidget {
-  const SignInPage({super.key});
+class SignInScreen extends ConsumerStatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  ConsumerState<SignInPage> createState() => _SignInPageState();
+  ConsumerState<SignInScreen> createState() => _SignInPageState();
 }
 
-class _SignInPageState extends ConsumerState<SignInPage> {
-  bool _isLoading = false;
-
+class _SignInPageState extends ConsumerState<SignInScreen> {
   Future<void> _handleGoogleSignIn() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    final authService = ref.read(authServiceProvider);
-    final userCredential = await authService.signInWithGoogle();
-
-    if (mounted) {
-      setState(() {
-        _isLoading = false;
-      });
-      if (userCredential == null) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Failed to sign in. Please try again.',
-              style: TextStyle(fontFamily: 'PT Sans'),
-            ),
-            backgroundColor: Colors.redAccent,
-          ),
-        );
-      }
-    }
+    await ref.read(authControllerProvider.notifier).signInWithGoogle();
   }
 
   @override
   Widget build(BuildContext context) {
+    // Listen for errors
+    ref.listen<AsyncValue<void>>(authControllerProvider, (previous, next) {
+      if (next is AsyncError) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(next.error.toString()),
+            backgroundColor: Colors.redAccent,
+          ),
+        );
+      }
+    });
+
+    final authState = ref.watch(authControllerProvider);
+    final isLoading = authState.isLoading;
+
     return Scaffold(
       backgroundColor: const Color(0xFFE5F4FC), // Very light blue
       body: SafeArea(
@@ -101,7 +92,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
               SocialLoginButton(
                 text: 'Continue with Google',
                 iconPath: 'assets/google.png',
-                isLoading: _isLoading,
+                isLoading: isLoading,
                 onPressed: _handleGoogleSignIn,
               ),
               const SizedBox(height: 48),
