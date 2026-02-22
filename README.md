@@ -1,16 +1,21 @@
 # Uminom
 
-A new Flutter project.
+![Demo](demo.gif)
 
-## Getting Started
+Uminom is a hydration companion that helps you log water intake, stay on track
+with daily goals, and receive personalized hydration recommendations.
 
-This project is a starting point for a Flutter application.
+## Core Features
 
-A few resources to get you started if this is your first Flutter project:
+- Water intake logging with timestamp and volume.
+- Daily goal setting with clear progress tracking.
+- Visual hydration meter for daily progress.
+- Reminder scheduling to stay consistent.
+- Generative recommendations for personalized hydration guidance.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Architecture and Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter
+- Riverpod
+- MVVM
+- Firebase
